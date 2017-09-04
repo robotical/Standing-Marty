@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import martypy
 
 from time import sleep
@@ -5,11 +7,13 @@ m = martypy.Marty('socket://192.168.0.28')
 m.enable_motors()
 
 #Disable safeties to allow motors to consume the extra current needed to push Marty up
+
 '''
 Be Aware that the motor protection is there for a reason, to prevent you from breaking the motors.
 It can be surprisingly easy to destroy a microservo motor by forcing it to move when it doesn’t want to.
 We won’t cover warranty replacements for motors if you disable protections and then break a motor.
 '''
+
 m.enable_safeties(False)
 m.fall_protection(False)    #This is to stop Marty from turning off the motors when it detects the change in orientation.
 
@@ -54,7 +58,7 @@ sleep(1)
 
 #Lean back
 m.move_joint(0, 0, 200)
-m.move_joint(3, 0, 200
+m.move_joint(3, 0, 200)
 
 #Re-enable safeties
 m.enable_safeties(True)
